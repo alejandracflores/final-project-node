@@ -1,3 +1,14 @@
+window.onload = init;
+
+function init() {
+    if(localStorage.getItem("token")) {
+        document.querySelector('.btn-primary').addEventListener('click', login);
+    }
+    else {
+        window.location.href = "tallernode.html";
+    }
+}
+
 function login() {
     var mail = document.getElementById('input-mail').value;
     var pass = document.getElementById('input-password').value;
