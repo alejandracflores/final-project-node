@@ -4,10 +4,10 @@ const db = require('../config/database');
 
 // Agregar empleado
 employee.post("/", async (req, res, next) => {
-    const { e_name, e_lastname, e_email, e_phone, e_address } = req.body;
-    if(e_name && e_lastname && e_email && e_phone && e_address) {
-        let query = "INSERT INTO employees (e_name, e_lastname, e_email, e_phone, e_address)";
-        query += ` VALUES('${e_name}', '${e_lastname}', '${e_email}', '${e_phone}', '${e_address}')`;
+    const { e_name, e_last_name, e_phone_number, e_email, e_address } = req.body;
+    if(e_name && e_last_name && e_phone_number && e_email && e_address) {
+        let query = "INSERT INTO employees (e_name, e_last_name,  e_phone_number, e_email, e_address)";
+        query += ` VALUES('${e_name}', '${e_last_name}', ${e_phone_number}, '${e_email}', '${e_address}')`;
         
         const rows = await db.query(query);
 
@@ -33,11 +33,11 @@ employee.delete("/:id([0-9]+)", async (req, res, next) => {
 
 // Actualizar empleado por ID
 employee.put("/:id([0-9]+)", async (req, res, next) => {
-    const { e_name, e_lastname, e_email, e_phone, e_address } = req.body;
+    const { e_name, e_last_name, e_email, e_phone_number, e_address } = req.body;
     
-    if(e_name && e_lastname && e_email && e_phone && e_address) {
-        let query = `UPDATE employees SET e_name='${e_name}', e_lastname='${e_lastname}', e_email='${e_email}',`;
-        query += `e_phone='${e_phone}', e_address='${e_address}' WHERE e_id=${req.params.id}`;
+    if(e_name && e_last_name && e_email && e_phone && e_address) {
+        let query = `UPDATE employees SET e_name='${e_name}', e_last_name='${e_last_name}', e_email='${e_email}',`;
+        query += `e_phone=${e_phone_number}, e_address='${e_address}' WHERE e_id=${req.params.id}`;
         
         const rows = await db.query(query);
 
