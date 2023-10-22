@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taller Node</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/tallernode.js"></script>
 </head>
+
 <body>
-    <h1>Bienvenido a la Base de datos de Taller de Node.js S.A. de C.V.</h1>
-    <h3>Elige entre estas opciones:</h3>
-    <ul>
-        <li><a href="add.html">Agregar empleado</a></li>
-        <li><a href="edit.html">Modificar datos de empleado</a></li>
-        <li><a href="delete.html">Eliminar empleado</a></li>
-        <li><a href="search.html">Buscar empleado</a></li>
-    </ul>
+    <center>
+        <h1>Bienvenido a la Base de datos de Taller de Node.js S.A. de C.V.</h1>
+    </center>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="add.html">Añadir empleado</a>
+        <a class="navbar-brand" href="add.html">Modificar datos de empleado</a>
+        <a class="navbar-brand" href="add.html">Eliminar empleado</a>
+        <a class="navbar-brand" href="add.html">Buscar empleado</a>
+    </nav>
 
-    <!-- Tabla para mostrar empleados -->
-    <table class="table mt-5">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-                <th>Dirección</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody id="employeeTable">
-            <!-- Las filas se llenarán dinámicamente -->
-        </tbody>
-    </table>
-</div>
+    <div>
+        <!-- Tabla para mostrar empleados -->
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable">
+                <!-- Las filas se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 </body>
 </html>
