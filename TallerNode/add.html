@@ -1,40 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Taller Node</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/add.js"></script>
+
 </head>
 <body>
-    <h1>Bienvenido a la Base de datos de Taller de Node.js S.A. de C.V.</h1>
-    <!-- Formulario para agregar o editar empleados -->
-<form id="employeeForm">
-    <input type="hidden" id="e_id">
-    <div class="form-group">
-        <label>Nombre:</label>
-        <input type="text" class="form-control" id="e_name" required>
+
+    <!-- Formulario para agregar empleados -->
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h2>Agregar Empleado</h2>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6 offset-3">
+                <div class="form-group">
+                    <label for="input-name">Nombre:</label>
+                    <input type="text" class="form-control" id="input-name" placeholder="Jorge">
+                </div>
+                <div class="form-group">
+                    <label for="input-last_name">Apellido:</label>
+                    <input type="text" class="form-control" id="input-last_name" placeholder="Escobar">
+                </div>
+                <div class="form-group">
+                    <label for="input-phone_number">Teléfono:</label>
+                    <input type="text" class="form-control" id="input-phone_number" placeholder="0123456789">
+                </div>
+                <div class="form-group">
+                    <label for="input-mail">Correo electrónico:</label>
+                    <input type="text" class="form-control" id="input-mail" placeholder="correo@dominio.ext">
+                </div>
+                <div class="form-group">
+                    <label for="input-address">Dirección:</label>
+                    <input type="text" class="form-control" id="input-address" placeholder="20 de Noviembre no. 30">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Agregar</button>
+                    <button class="btn btn-secondary">Volver</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Apellido:</label>
-        <input type="text" class="form-control" id="e_lastname" required>
-    </div>
-    <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" id="e_email" required>
-    </div>
-    <div class="form-group">
-        <label>Teléfono:</label>
-        <input type="tel" class="form-control" id="e_phone" required>
-    </div>
-    <div class="form-group">
-        <label>Dirección:</label>
-        <input type="text" class="form-control" id="e_address" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Agregar/Editar Empleado</button>
-</form>
 
 </body>
 </html>
