@@ -15,7 +15,7 @@ function searchEmployee() {
     if(criteria === 'id') {
         endpoint = `http://localhost:3000/employee/${searchData}`;
     } else if(criteria === 'name') {
-        endpoint = `http://localhost:3000/employee/${searchData}`;
+        endpoint = `http://localhost:3000/employee/byname/${searchData}`;
     }
 
     axios.get(endpoint)
@@ -23,7 +23,7 @@ function searchEmployee() {
             displayEmployeeDetails(response.data.message[0]);
         })
         .catch(function(error) {
-            alert('Empleado no encontrado.');
+            alert(`Error: ${error.response.data.message}`);
             console.log(error);
         });
 }
