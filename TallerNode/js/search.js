@@ -19,7 +19,7 @@ function searchEmployee() {
     if(criteria === 'id') {
         endpoint = `http://localhost:3000/employee/${searchData}`;
     } else if(criteria === 'name') {
-        endpoint = `http://localhost:3000/employee/byname/${searchData}`;
+        endpoint = `http://localhost:3000/employee/${searchData}`;
     }
 
     axios.get(endpoint, { headers: { Authorization: 'Bearer '+ localStorage.getItem("token"), } })
