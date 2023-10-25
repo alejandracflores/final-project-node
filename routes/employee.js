@@ -34,17 +34,13 @@ employee.delete("/:id([0-9]+)", async (req, res, next) => {
 // Actualizar empleado por ID
 employee.put("/:id([0-9]+)", async (req, res, next) => {
     const { e_name, e_last_name, e_email, e_phone_number, e_address } = req.body;
-    
     if(e_name && e_last_name && e_email && e_phone && e_address) {
         let query = `UPDATE employees SET e_name='${e_name}', e_last_name='${e_last_name}', e_email='${e_email}',`;
         query += `e_phone=${e_phone_number}, e_address='${e_address}' WHERE e_id=${req.params.id}`;
-        
         const rows = await db.query(query);
-
         if(rows.affectedRows == 1) {
             return res.status(200).json({ code: 200, message: "Empleado actualizado correctamente" });
         }
-
         return res.status(500).json({ code: 500, message: "Ocurrió un error"});
     }
     return res.status(500).json({ code: 500, message: "Campos incompletos" });
