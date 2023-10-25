@@ -19,6 +19,7 @@ function add() {
     var phone_number = parseInt(document.getElementById('input-phone_number').value);
     var mail = document.getElementById('input-mail').value;
     var address = document.getElementById('input-address').value;
+    var messageElement = document.getElementById('message');
 
     axios({
         method: 'post',
@@ -36,7 +37,13 @@ function add() {
         
     }).then(function(res) {
         console.log(res);
+        //Mensaje de éxito
+        messageElement.textContent = 'Empleado creado exitosamente.';
+        messageElement.style.color = 'green';
     }).catch(function(err){
         console.log(err);
+        //Mensaje de error
+        messageElement.textContent = 'Error al crear el empleado. Por favor, inténtalo de nuevo.';
+        messageElement.style.color = 'red';
     })
 }

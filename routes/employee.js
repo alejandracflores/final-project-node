@@ -70,7 +70,7 @@ employee.get('/:id([0-9]+)', async (req, res, next) => {
 // Obtener empleado por nombre
 employee.get('/:name', async (req, res, next) => {
     const name = req.params.name;
-    const emp = await db.query("SELECT * FROM employees WHERE e_name LIKE '" + name + "';");
+    const emp = await db.query("SELECT * FROM employees WHERE e_name = '" + name + "';");
     
     if (emp.length > 0) {
         return res.status(200).json({ code: 200, message: emp });
