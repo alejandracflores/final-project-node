@@ -37,10 +37,6 @@ function displayemployee(employees) {
                 <td>${employee.e_phone_number}</td>
                 <td>${employee.e_email}</td>
                 <td>${employee.e_address}</td>
-                <td>
-                    <button class="btn btn-warning">Editar</button>
-                    <button class="btn btn-danger" data-id="${employee.e_id}">Eliminar</button>
-                </td>
             </tr>`;
     });
 }
