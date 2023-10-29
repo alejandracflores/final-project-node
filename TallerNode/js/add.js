@@ -6,10 +6,16 @@ function init() {
             window.location.href = "tallernode.html"
             });
     
-        document.querySelector('.btn-primary').addEventListener('click', add);
+        document.querySelector('.btn-primary').addEventListener('click', confirmEditing);
     }
     else {
         window.location.href = "tallernode.html";
+    }
+}
+
+function confirmEditing() {
+    if(confirm("¿Estás seguro de que quieres editarlo?")) {
+        add();
     }
 }
 
@@ -38,12 +44,10 @@ function add() {
     }).then(function(res) {
         console.log(res);
         //Mensaje de éxito
-        messageElement.textContent = 'Empleado creado exitosamente.';
-        messageElement.style.color = 'green';
+        alert("Empleado creado exitosamente");
     }).catch(function(err){
         console.log(err);
         //Mensaje de error
-        messageElement.textContent = 'Error al crear el empleado. Por favor, inténtalo de nuevo.';
-        messageElement.style.color = 'red';
+        alert("Error al crear el empleado. Por favor, inténtalo de nuevo");
     })
 }

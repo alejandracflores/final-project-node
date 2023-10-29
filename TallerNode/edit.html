@@ -3,25 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../TallerNode/js/edit.js"></script>
-    <title>Editar Datos</title>
+    <title>Editar Empleado</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/edit.js"></script>
 </head>
+
 <body>
-    <h3>Editar Datos</h3>
-    <form id="editForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required><br>
-        <label for="lastName">Apellido:</label>
-        <input type="text" id="lastName" name="lastName" required><br>
-        <label for="phoneNumber">Teléfono Celular:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required><br>
-        <label for="email">Correo Electrónico:</label>
-        <input type="text" id="email" name="email" required><br>
-        <label for="address">Dirección:</label>
-        <input type="text" id="address" name="address" required><br>
-        <input type="submit" value="Guardar Cambios">
-    </form>
-    <a href="/acciones">Volver a la lista</a>
-    <script src="edit.js"></script>
+<div class="container mt-5">
+    <h2>Editar Empleado</h2>
+    <div class="form-group">
+        <label for="edit-input-id">ID del Empleado:</label>
+        <input type="text" id="edit-input-id" class="form-control" placeholder="Ingrese el ID del empleado">
+    </div>
+    <div class="form-group">
+        <label for="edit-input-name">Nombre:</label>
+        <input type="text" id="edit-input-name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="edit-input-lastname">Apellido:</label>
+        <input type="text" id="edit-input-lastname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="edit-input-phone">Teléfono:</label>
+        <input type="text" id="edit-input-phone" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="edit-input-email">Email:</label>
+        <input type="email" id="edit-input-email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="edit-input-address">Dirección:</label>
+        <input type="text" id="edit-input-address" class="form-control">
+    </div>
+    <button class="btn btn-warning" id="edit-button">Actualizar</button>
+    <button class="btn btn-secondary" id="return">Volver</button>
+</div>
 </body>
 </html>

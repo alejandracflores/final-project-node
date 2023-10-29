@@ -22,7 +22,8 @@ employee.post("/", async (req, res, next) => {
 
 // Eliminar empleado por ID
 employee.delete("/:id([0-9]+)", async (req, res, next) => {
-    const query = `DELETE FROM employees WHERE e_id=${req.params.id}`;
+    const id = req.params.id;
+    const query = `DELETE FROM employees WHERE e_id=` + id ;
     const rows = await db.query(query);
 
     if(rows.affectedRows == 1) {
@@ -34,9 +35,9 @@ employee.delete("/:id([0-9]+)", async (req, res, next) => {
 // Actualizar empleado por ID
 employee.put("/:id([0-9]+)", async (req, res, next) => {
     const { e_name, e_last_name, e_email, e_phone_number, e_address } = req.body;
-    if(e_name && e_last_name && e_email && e_phone && e_address) {
+    if(e_name && e_last_name && e_email && e_phone_number && e_address) {
         let query = `UPDATE employees SET e_name='${e_name}', e_last_name='${e_last_name}', e_email='${e_email}',`;
-        query += `e_phone=${e_phone_number}, e_address='${e_address}' WHERE e_id=${req.params.id}`;
+        query += `e_phone_number=${e_phone_number}, e_address='${e_address}' WHERE e_id=${req.params.id}`;
         const rows = await db.query(query);
         if(rows.affectedRows == 1) {
             return res.status(200).json({ code: 200, message: "Empleado actualizado correctamente" });
