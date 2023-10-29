@@ -1,5 +1,9 @@
 window.onload = function() {
     document.getElementById('search-button').addEventListener('click', searchEmployee);
+
+    document.querySelector('.btn-secondary').addEventListener('click', function() {
+        window.location.href = "tallernode.html"
+        });
 }
 
 function searchEmployee() {
@@ -18,12 +22,12 @@ function searchEmployee() {
         endpoint = `http://localhost:3000/employee/${searchData}`;
     }
 
-    axios.get(endpoint)
+    axios.get(endpoint, { headers: { Authorization: 'Bearer '+ localStorage.getItem("token"), } })
         .then(function(response) {
             displayEmployeeDetails(response.data.message[0]);
         })
         .catch(function(error) {
-            alert('Empleado no encontrado.');
+            alert(`Error: ${error.response.data.message}`);
             console.log(error);
         });
 }

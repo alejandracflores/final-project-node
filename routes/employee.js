@@ -47,7 +47,7 @@ employee.put("/:id([0-9]+)", async (req, res, next) => {
 });
 
 // Obtener todos los empleados
-employee.get("/", async (req, res, next) => {
+employee.get("/byname/:name", async (req, res, next) => {
     const emps = await db.query("SELECT * FROM employees");
     return res.status(200).json({ code: 200, message: emps });
 });
