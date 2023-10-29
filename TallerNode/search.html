@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +10,32 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/search.js"></script>
+    <style>
+        .main-container {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        button.btn-primary {
+            background-color: #28a745;
+            border: none;
+        }
+        button.btn-secondary {
+            background-color: #ccc;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Buscar Empleado</h2>
+    <div class="main-container">
+        <h2>Buscar Empleado</h2>
     <div class="form-group">
         <label for="search-criteria">Buscar por:</label>
         <select id="search-criteria" class="form-control">
@@ -31,5 +52,6 @@
         <!-- Aquí se mostrarán los detalles del empleado -->
     </div>
 </div>
+    </div>
 </body>
 </html>

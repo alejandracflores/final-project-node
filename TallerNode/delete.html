@@ -10,15 +10,38 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/delete.js"></script>
+    <style>
+        .main-container {
+            background-color: #f9f9f8;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        button.btn-danger {
+            background-color: #dc3545;
+            border: none;
+        }
+        button.btn-secondary {
+            background-color: #ccc;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Eliminar Empleado</h2>
+    <div class="main-container">
+        <h2>Eliminar Empleado</h2>
     <div class="form-group">
         <input type="text" id="delete-input" class="form-control" placeholder="Ingrese el ID del empleado a eliminar">
     </div>
     <button class="btn btn-danger" id="delete-button">Eliminar</button>
     <button class="btn btn-secondary" id="return">Volver</button>
-</div>
+    </div>
+    </div>
 </body>
 </html>
