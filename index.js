@@ -1,15 +1,10 @@
 const morgan = require('morgan');
 const express = require('express');
 const app = express();
-//const exphbs = require('express-handlebars'); 
-
-
-//const pool = require('./config/database');
 
 // Routers
 const employee = require('./routes/employee');
 const user = require('./routes/user');
-//const deleteRoute = require('./TallerNode/js/delete'); 
 
 // Middlewares
 const auth = require('./middleware/auth');
@@ -26,7 +21,6 @@ app.get('/', index);
 app.use('/user', user);
 app.use(auth);
 app.use('/employee', employee);
-//app.use('/delete', deleteRoute); 
 
 app.use(notFound);
 
