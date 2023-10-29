@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router();
+const employee = express.Router();
 const pool = require('../../config/database');
 
 // Manejar la solicitud de eliminación
-router.delete('/:employeeId', async (req, res) => {
+employee.delete('/:employeeId', async (req, res) => {
   const employeeId = req.params.employeeId;
 
   try {
@@ -22,4 +22,4 @@ router.delete('/:employeeId', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = employee;
