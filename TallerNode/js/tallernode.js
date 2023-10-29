@@ -1,15 +1,7 @@
 window.onload = init;
 
-var headers = {};
-var url = "http://localhost:3000"
-
 function init() {
     if(localStorage.getItem("token")) {
-        headers = {
-            headers: {
-                'Authorization': "bearer " + localStorage.getItem("token")
-            }
-        }
         loadEmployee();
     }
     else {
@@ -18,19 +10,39 @@ function init() {
 }
 
 function loadEmployee() {
-    axios.get(url + "/employee", headers)
-    .then(function(res) {
+    axios({
+        method: 'get',
+        url: 'http://localhost:3000/employee/byname',
+        headers: {
+            Authorization: 'Bearer ' + localStorage.getItem("token"),
+        }
+    }).then(function (res) {
         console.log(res);
         displayemployee(res.data.message);
-    }).catch(function(err) {     
+    }).catch(function (err) {
         console.log(err);
-    })
+    });
 }
 
-function displayemployee(employee) {
-    var body = document.querySelector("body");
-    for(var i = 0; i < employee.length; i++) {
-        body.innerHTML += `<h3>${employee[i].e_name}</h3>`;
-    }
+function displayemployee(employees) {
+    const detailsDiv = document.getElementById('employee-columns');
+    detailsDiv.innerHTML = '';
+
+    employees.forEach(employee => {
+        detailsDiv.innerHTML += `
+            <tr>
+                <td>${employee.e_id}</td>
+                <td>${employee.e_name}</td>
+                <td>${employee.e_last_name}</td>
+                <td>${employee.e_phone_number}</td>
+                <td>${employee.e_email}</td>
+                <td>${employee.e_address}</td>
+                <td>
+                    <button class="btn btn-warning">Editar</button>
+                    <button class="btn btn-danger" data-id="${employee.e_id}">Eliminar</button>
+                </td>
+            </tr>`;
+    });
 }
 
+  
