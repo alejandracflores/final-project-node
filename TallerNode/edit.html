@@ -10,11 +10,32 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/edit.js"></script>
+    <style>
+        .main-container {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        button.btn-warning {
+            background-color: #ffc107;
+            border: none;
+        }
+        button.btn-secondary {
+            background-color: #ccc;
+            border: none;
+        }
+    </style>
 </head>
-
 <body>
 <div class="container mt-5">
-    <h2>Editar Empleado</h2>
+    <div class="main-container">
+        <h2>Editar Empleado</h2>
     <div class="form-group">
         <label for="edit-input-id">ID del Empleado:</label>
         <input type="text" id="edit-input-id" class="form-control" placeholder="Ingrese el ID del empleado">
@@ -41,6 +62,7 @@
     </div>
     <button class="btn btn-warning" id="edit-button">Actualizar</button>
     <button class="btn btn-secondary" id="return">Volver</button>
+</div>
 </div>
 </body>
 </html>
